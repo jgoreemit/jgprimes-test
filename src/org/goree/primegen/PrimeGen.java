@@ -34,6 +34,9 @@ public class PrimeGen {
     
     public static boolean isPrime(int x, List<Integer> primes) {
         for (int prime : primes) {
+            if (prime * prime > x) {
+                return true;
+            }
             if (x % prime == 0) {
                 return false;
             }
