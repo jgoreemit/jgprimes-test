@@ -46,8 +46,12 @@ public class PrimeGen {
     
     
     public static void main(String[] args) throws Exception {
+        if (args.length < 1) {
+            throw new IllegalArgumentException("USAGE: PrimeGen <number of primes>");
+        }
+        int count = Integer.valueOf(args[0]);
         List<Integer> primes = new ArrayList<Integer>();
-        while (primes.size() < 100) {
+        while (primes.size() < count) {
             addNextPrime(primes);
         }
         System.out.println(primes);
